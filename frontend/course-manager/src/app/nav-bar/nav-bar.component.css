@@ -5,6 +5,8 @@
 
 .sidenav a {
     color: #fff;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .sidenav .icons {
@@ -14,4 +16,8 @@
 .content {
     padding: 16px;
     background-color: white;
+}
+
+.sidenav a:hover {
+    background-color: #0074c2;
 }
