@@ -24,8 +24,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css",
-              "https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Outfit:wght@100&family=Roboto&family=Ubuntu&display=swap"
+              "src/styles.css"
             ],
             "scripts": [
             ]

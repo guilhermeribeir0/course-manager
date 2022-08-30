@@ -1,5 +1,5 @@
 .sidenav {
-    background-color: #004fe2;
+    background-color: #383838;
     width: 200px;
 }
 
@@ -19,5 +19,5 @@
 }
 
 .sidenav a:hover {
-    background-color: #0074c2;
+    background-color: #004fe2;
 }
