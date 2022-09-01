@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { CourseService } from './../../course.service';
 import { Course } from './../../course';
 import { Component, OnInit } from '@angular/core';
@@ -28,6 +27,16 @@ export class CourseListComponent implements OnInit {
       },
       error: erro => console.log('Error', erro)
     });
+  }
+
+  deleteById(courseId: number): void {
+    this.courseService.deleteById(courseId).subscribe({
+        next: () => {
+            console.log('Deletado com sucesso');
+            this.retrieveAll();
+        },
+        error: err => console.log('Error', err)
+    })
   }
 
   set filter(value: string) {

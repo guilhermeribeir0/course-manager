@@ -16,4 +16,21 @@ export class CourseService {
         return this.http.get<Course[]>(this.baseUrl);
     }
 
+    retrieveById(id: number): Observable<Course> {
+        return this.http.get<Course>(`${this.baseUrl}/${id}`);
+    }
+
+    save(course: Course): Observable<Course> {
+        if(course.id) {
+            return this.http.put<Course>(`${this.baseUrl}/${course.id}`, course);
+        } else {
+            return this.http.post<Course>(`${this.baseUrl}`, course);
+        }
+    }
+
+    deleteById(id: number): Observable<any> {
+        return this.http.delete<any>(`${this.baseUrl}/${id}`)
+    }
+
+
 }
