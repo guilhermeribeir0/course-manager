@@ -29,4 +29,14 @@ export class CourseListComponent implements OnInit {
       error: erro => console.log('Error', erro)
     });
   }
+
+  set filter(value: string) {
+    this.filterBy = value;
+    this.filteredCourses = this.courses.filter((course: Course) => course.name.toLocaleLowerCase().indexOf(this.filterBy.toLocaleLowerCase()) > -1);
+  }
+
+  get filter() {
+    return this.filterBy;
+  }
+
 }
