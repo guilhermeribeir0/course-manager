@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs';
+import { CourseService } from './../../course.service';
+import { Course } from './../../course';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseListComponent implements OnInit {
 
-  constructor() { }
+  courses: Course[] = [];
+  filteredCourses: Course[] = [];
+  filterBy!: string;
+
+  constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
+    this.retrieveAll();
   }
 
+  retrieveAll(): void {
+    this.courseService.retrieveAll().subscribe({
+      next: course => {
+        this.courses = course;
+        this.filteredCourses = this.courses;
+      },
+      error: erro => console.log('Error', erro)
+    });
+  }
 }
