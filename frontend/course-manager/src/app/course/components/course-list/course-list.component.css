@@ -6,3 +6,22 @@
 .container-list h2 {
     font-size: 1.8em;
 }
+
+table {
+    width: 100%;
+}
+
+table th {
+    font-size: 14px;
+}
+
+table td {
+    font-size: 16px;
+}
+
+img {
+    display: flex;
+    height: 34px;
+    align-items: center;
+    margin: 4px;
+}

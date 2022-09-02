@@ -4,10 +4,10 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{
-  path: "",
+  path: '',
   component: HomeComponent
 }, {
-  path: "courses",
+  path: 'courses',
   component: CourseListComponent
 }];
 

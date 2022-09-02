@@ -13,6 +13,8 @@ export class CourseListComponent implements OnInit {
   filteredCourses: Course[] = [];
   filterBy!: string;
 
+  displayedColumns = ['id', 'image', 'name', 'code', 'price', 'rating']
+
   constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
