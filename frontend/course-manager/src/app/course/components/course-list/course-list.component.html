@@ -1,6 +1,17 @@
 <mat-card class="container-list">
     <h2>Lista de Cursos</h2>
 </mat-card>
+<div class="pesquisa">
+  <h3>Pesquisar por:</h3>
+  <mat-form-field class="nome" appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Digite o nome...">
+  </mat-form-field>
+  <mat-form-field class="codigo" appearance="outline">
+    <mat-label>Código</mat-label>
+    <input matInput placeholder="Digite o código...">
+  </mat-form-field>
+</div>
 <div class="mat-elevation-z4">
     <table mat-table [dataSource]="courses">
       <!-- Id Column -->
