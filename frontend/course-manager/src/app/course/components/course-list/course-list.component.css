@@ -1,23 +1,10 @@
-.container-list {
+.filter {
     display: flex;
     align-items: center;
+    margin: 4px auto 4px auto;
 }
 
-.container-list h2 {
-    font-size: 1.8em;
-}
-
-.pesquisa {
-    display: flex;
-    margin-top: 10px;
-    align-items: center;
-}
-
-.pesquisa h3 {
-    margin-right: 20px;
-}
-
-.pesquisa .nome {
+.filter h3 {
     margin-right: 20px;
 }
 
