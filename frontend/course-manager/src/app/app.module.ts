@@ -25,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CourseListComponent } from './course/components/course-list/course-list.component';
+import { CourseInfoComponent } from './course/components/course-info/course-info.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CourseListComponent } from './course/components/course-list/course-list
     CourseListComponent,
     NavBarComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,

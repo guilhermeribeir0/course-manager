@@ -1,3 +1,4 @@
+import { CourseInfoComponent } from './course/components/course-info/course-info.component';
 import { CourseListComponent } from './course/components/course-list/course-list.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule, Component } from '@angular/core';
@@ -9,6 +10,9 @@ const routes: Routes = [{
 }, {
   path: 'courses',
   component: CourseListComponent
+}, {
+  path: 'courses/info/:id',
+  component: CourseInfoComponent
 }];
 
 @NgModule({
