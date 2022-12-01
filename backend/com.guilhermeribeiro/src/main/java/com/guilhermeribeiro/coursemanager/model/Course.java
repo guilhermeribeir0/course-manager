@@ -1,7 +1,8 @@
 package com.guilhermeribeiro.coursemanager.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
