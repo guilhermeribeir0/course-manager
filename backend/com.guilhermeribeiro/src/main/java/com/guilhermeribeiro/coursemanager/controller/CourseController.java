@@ -46,6 +46,23 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).body(courseRepository.save(course));
     }
 
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
+        return courseRepository.findById(id)
+                .map(courseUp -> {
+                    courseUp.setName(course.getName());
+                    courseUp.setCode(course.getCode());
+                    courseUp.setImageUrl(course.getImageUrl());
+                    courseUp.setDuration(course.getDuration());
+                    courseUp.setDescription(course.getDescription());
+                    courseUp.setPrice(course.getPrice());
+                    courseUp.setRating(course.getRating());
+                    courseUp.setReleaseDate(course.getReleaseDate());
+                    Course updated = courseRepository.save(courseUp);
+                    return ResponseEntity.ok().body(updated);
+                }).orElse(ResponseEntity.notFound().build());
+    }
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
         return courseRepository.findById(id)
