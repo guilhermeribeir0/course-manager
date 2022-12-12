@@ -23,11 +23,22 @@ public class CourseController {
         return courseRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Course> findCourseById(@PathVariable Long id) {
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Course> findCourseById(@RequestParam(value = "id") Long id) {
         return courseRepository.findById(id)
                 .map(course -> ResponseEntity.ok().body(course))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping(value = "/{code}")
+    public ResponseEntity<Course> findCourseByCode(@RequestParam(value = "code") String code) {
+        Course courseByCode = courseRepository.findByCode(code);
+
+        if (courseByCode == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(courseByCode, HttpStatus.OK);
+        }
     }
 
     @PostMapping
@@ -35,7 +46,7 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.CREATED).body(courseRepository.save(course));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
         return courseRepository.findById(id)
                 .map(courseDel -> {
