@@ -13,7 +13,9 @@ export class CourseListComponent implements OnInit {
   filteredCourses: Course[] = [];
   filterBy!: string;
 
-  displayedColumns = ['id', 'image', 'name', 'code', 'price', 'rating', 'duration', 'actions']
+  imageteste: string = "/assets/"
+
+  displayedColumns = ['id', 'name', 'code', 'price', 'rating', 'duration', 'actions']
 
   constructor(private courseService: CourseService) { }
 
