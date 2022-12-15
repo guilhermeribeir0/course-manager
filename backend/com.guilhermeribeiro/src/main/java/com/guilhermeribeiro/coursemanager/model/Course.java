@@ -18,8 +18,6 @@ public class Course implements Serializable {
 
     private String name;
 
-    private String imageUrl;
-
     private double price;
 
     @Column(length = 8)

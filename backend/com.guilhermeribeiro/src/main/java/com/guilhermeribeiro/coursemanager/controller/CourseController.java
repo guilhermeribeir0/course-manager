@@ -52,7 +52,6 @@ public class CourseController {
                 .map(courseUp -> {
                     courseUp.setName(course.getName());
                     courseUp.setCode(course.getCode());
-                    courseUp.setImageUrl(course.getImageUrl());
                     courseUp.setDuration(course.getDuration());
                     courseUp.setDescription(course.getDescription());
                     courseUp.setPrice(course.getPrice());
