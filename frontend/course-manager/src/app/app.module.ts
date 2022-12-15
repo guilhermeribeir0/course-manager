@@ -21,6 +21,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -54,6 +56,8 @@ import { CourseInfoComponent } from './course/components/course-info/course-info
     MatSortModule,
     MatSnackBarModule,
     MatButtonModule,
+    MatCheckboxModule,
+    MatRadioModule,
     HttpClientModule
   ],
   providers: [],

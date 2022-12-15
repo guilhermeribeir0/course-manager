@@ -12,6 +12,7 @@ export class CourseListComponent implements OnInit {
   courses: Course[] = [];
   filteredCourses: Course[] = [];
   filterBy!: string;
+  labelPosition: 'id' | 'code' = 'id';
 
   imageteste: string = "/assets/"
 
