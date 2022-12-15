@@ -31,8 +31,32 @@ a {
     margin: 4px;
 }
 
-button {
+#btn-new-course {
     margin: 10px 0px 10px 0px;
+    font-size: 16px;
+    background-color: #004fe2;
+    color: white;
+}
+
+#btn-info {
+    margin: 10px 10px 10px 0px;
+    font-size: 16px;
+    background-color: #004fe2;
+    color: white;
+}
+
+.form-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-search {
+    font-size: 16px;
+}
+
+#btn-search {
+    margin: 10px 0px 10px 20px;
     font-size: 16px;
     background-color: #004fe2;
     color: white;
