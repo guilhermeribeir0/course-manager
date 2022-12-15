@@ -5,7 +5,7 @@
 <h3>Functionalities</h3>
 
 <ul>
-  <li>Register a course</li>
+  <li>Register course</li>
   <li>List courses</li>
   <li>Update course</li>
   <li>Delete course</li>
