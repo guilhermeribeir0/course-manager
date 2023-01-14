@@ -20,6 +20,11 @@ export class CourseService {
         return this.http.get<Course>(`${this.baseUrl}/${id}`);
     }
 
+    retrieveByCode(code: string): Observable<Course> {
+        code.toUpperCase();
+        return this.http.get<Course>(`${this.baseUrl}/${code}`);
+    }
+
     save(course: Course): Observable<Course> {
         if(course.id) {
             return this.http.put<Course>(`${this.baseUrl}/${course.id}`, course);
@@ -29,7 +34,7 @@ export class CourseService {
     }
 
     deleteById(id: number): Observable<any> {
-        return this.http.delete<any>(`${this.baseUrl}/${id}`)
+        return this.http.delete<any>(`${this.baseUrl}/${id}`);
     }
 
 

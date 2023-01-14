@@ -1,6 +1,5 @@
 package com.guilhermeribeiro.coursemanager.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
