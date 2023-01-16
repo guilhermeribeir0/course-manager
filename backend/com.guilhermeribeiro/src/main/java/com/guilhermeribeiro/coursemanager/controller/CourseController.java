@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping(value = "/api/courses")
@@ -38,6 +39,17 @@ public class CourseController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(courseByCode, HttpStatus.OK);
+        }
+    }
+
+    @GetMapping(value = "/{name}")
+    public ResponseEntity<Course> findCourseByName(@RequestParam(value = "name") String name) {
+        Course courseByName = courseRepository.findByName(name);
+
+        if (courseByName == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(courseByName, HttpStatus.OK);
         }
     }
 
