@@ -25,6 +25,10 @@ export class CourseService {
         return this.http.get<Course>(`${this.baseUrl}/${code}`);
     }
 
+    retrieveByName(name: String): Observable<Course> {
+        return this.http.get<Course>(`${this.baseUrl}/${name}`);
+    }
+
     save(course: Course): Observable<Course> {
         if(course.id) {
             return this.http.put<Course>(`${this.baseUrl}/${course.id}`, course);
