@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseListComponent implements OnInit {
 
+  course!: Course;
   courses: Course[] = [];
   filteredCourses: Course[] = [];
   filterBy!: string;
-  labelPosition: 'id' | 'code' = 'id';
+  labelPosition: 'name' | 'code' = 'code';
 
   imageteste: string = "/assets/"
 
@@ -32,6 +33,14 @@ export class CourseListComponent implements OnInit {
       },
       error: erro => console.log('Error', erro)
     });
+  }
+
+  retrieveCourseByChoice() {
+    if (this.labelPosition === 'name') {
+        
+    } else if (this.labelPosition === 'code') {
+        
+    }
   }
 
   deleteById(courseId: number): void {
