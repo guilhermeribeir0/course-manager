@@ -43,12 +43,12 @@ public class CourseController {
 
     @GetMapping(value = "/{name}")
     public ResponseEntity<List<Course>> findCourseByName(@RequestParam(value = "name") String name) {
-        List<Course> courseByName = courseRepository.findByName(name);
+        List<Course> courses = courseRepository.findByName(name);
 
-        if (courseByName == null) {
+        if (courses == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<>(courseByName, HttpStatus.OK);
+            return new ResponseEntity<>(courses, HttpStatus.OK);
         }
     }
 
