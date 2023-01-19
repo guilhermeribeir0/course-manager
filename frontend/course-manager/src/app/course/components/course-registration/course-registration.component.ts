@@ -1,3 +1,4 @@
+import { Course } from './../../course';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-registration.component.css']
 })
 export class CourseRegistrationComponent implements OnInit {
+
+  course!: Course;
 
   constructor() { }
 

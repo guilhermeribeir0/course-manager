@@ -2,7 +2,7 @@ import { CourseRegistrationComponent } from './course/components/course-registra
 import { CourseInfoComponent } from './course/components/course-info/course-info.component';
 import { CourseListComponent } from './course/components/course-list/course-list.component';
 import { HomeComponent } from './home/home.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{

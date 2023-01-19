@@ -1,0 +1,18 @@
+.form-registration {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-save {
+    font-size: 16px;
+    background-color: #004fe2;
+    color: white;
+    margin-right: 10px;
+}
+
+#btn-cancel {
+    font-size: 16px;
+    background-color: #8b8b8b;
+    color: white;
+}
