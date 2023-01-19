@@ -22,11 +22,11 @@ export class CourseService {
 
     retrieveByCode(code: string): Observable<Course> {
         code.toUpperCase();
-        return this.http.get<Course>(`${this.baseUrl}/${code}`);
+        return this.http.get<Course>(`${this.baseUrl}/{code}?code=${code}`);
     }
 
-    retrieveByName(name: String): Observable<Course> {
-        return this.http.get<Course>(`${this.baseUrl}/${name}`);
+    retrieveByName(name: String): Observable<Course[]> {
+        return this.http.get<Course[]>(`${this.baseUrl}/{name}?name=${name}`);
     }
 
     save(course: Course): Observable<Course> {

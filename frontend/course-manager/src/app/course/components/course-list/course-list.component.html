@@ -18,9 +18,9 @@
   
         <mat-form-field class="form-search" appearance="outline">
           <mat-label color="white">Pesquisar Sobre</mat-label>
-          <input matInput type="text">
+          <input matInput type="text" [(ngModel)]="courseSearch">
         </mat-form-field>
-        <button id="btn-search" mat-raised-button>
+        <button id="btn-search" mat-raised-button (click)="retrieveCourseByChoice()">
           Pesquisar
         </button>
       

@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CourseListComponent implements OnInit {
 
   course!: Course;
+  courseSearch!: string;
   courses: Course[] = [];
   filteredCourses: Course[] = [];
   filterBy!: string;
@@ -27,8 +28,8 @@ export class CourseListComponent implements OnInit {
 
   retrieveAll(): void {
     this.courseService.retrieveAll().subscribe({
-      next: course => {
-        this.courses = course;
+      next: courses => {
+        this.courses = courses;
         this.filteredCourses = this.courses;
       },
       error: erro => console.log('Error', erro)
@@ -37,9 +38,23 @@ export class CourseListComponent implements OnInit {
 
   retrieveCourseByChoice() {
     if (this.labelPosition === 'name') {
-        
+        this.courseService.retrieveByName(this.courseSearch).subscribe({
+          next: courses => {
+            this.courses = courses;
+            console.log(courses)
+          },
+          error: erro => console.log('Error', erro)
+        });
     } else if (this.labelPosition === 'code') {
-        
+        this.courseService.retrieveByCode(this.courseSearch).subscribe({
+          next: course => {
+            this.course = course;
+            this.courses = [];
+            this.courses.push(course)
+            console.log(course)
+          },
+          error: erro => console.log('Error', erro)
+        });
     }
   }
 
