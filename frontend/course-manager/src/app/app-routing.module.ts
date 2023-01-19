@@ -1,3 +1,4 @@
+import { CourseRegistrationComponent } from './course/components/course-registration/course-registration.component';
 import { CourseInfoComponent } from './course/components/course-info/course-info.component';
 import { CourseListComponent } from './course/components/course-list/course-list.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,9 @@ const routes: Routes = [{
 }, {
   path: 'info/:id',
   component: CourseInfoComponent
+}, {
+  path: 'registration',
+  component: CourseRegistrationComponent
 }];
 
 @NgModule({
