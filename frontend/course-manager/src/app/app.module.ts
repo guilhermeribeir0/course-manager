@@ -28,6 +28,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CourseListComponent } from './course/components/course-list/course-list.component';
 import { CourseInfoComponent } from './course/components/course-info/course-info.component';
+import { CourseRegistrationComponent } from './course/components/course-registration/course-registration.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CourseInfoComponent } from './course/components/course-info/course-info
     NavBarComponent,
     HeaderComponent,
     HomeComponent,
-    CourseInfoComponent
+    CourseInfoComponent,
+    CourseRegistrationComponent
   ],
   imports: [
     BrowserModule,
