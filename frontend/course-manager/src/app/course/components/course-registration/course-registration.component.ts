@@ -1,6 +1,8 @@
+import { CourseService } from './../../course.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Course } from './../../course';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-registration',
@@ -21,10 +23,14 @@ export class CourseRegistrationComponent implements OnInit {
       releaseDate: new FormControl('', Validators.required)
   })
 
-  constructor() { }
+  constructor(private CourseService: CourseService, private router: Router) { }
 
   ngOnInit(): void {
 
+  }
+
+  cancel(): void {
+    this.router.navigate(['/courses'])
   }
 
 }
