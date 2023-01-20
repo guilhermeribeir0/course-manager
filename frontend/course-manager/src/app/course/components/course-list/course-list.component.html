@@ -1,13 +1,13 @@
 <mat-card class="container-list">
   <mat-card-title>List of Courses</mat-card-title>
   <div class="form-top">
-    <!--button new register-->
+<!--button new register-->
     <div>
       <button id="btn-new-course" mat-raised-button routerLink="/registration">
         New Register
       </button>
     </div>
-    <!--search area-->
+<!--search area-->
     <div>
 
         <label class="search-options">Search for:</label>
@@ -27,6 +27,7 @@
     </div>
   </div>
 
+<!--table area-->
 </mat-card>
 <div class="mat-elevation-z4">
   <table mat-table [dataSource]="courses">
