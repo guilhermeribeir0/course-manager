@@ -31,13 +31,13 @@ public class CourseController {
     }
 
     @GetMapping(value = "/{code}")
-    public ResponseEntity<Course> findCourseByCode(@RequestParam(value = "code") String code) {
-        Course courseByCode = courseRepository.findByCode(code);
+    public ResponseEntity<List<Course>> findCourseByCode(@RequestParam(value = "code") String code) {
+        List<Course> courses = courseRepository.findByCode(code);
 
-        if (courseByCode == null) {
+        if (courses == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<>(courseByCode, HttpStatus.OK);
+            return new ResponseEntity<>(courses, HttpStatus.OK);
         }
     }
 
