@@ -14,12 +14,12 @@ export class CourseRegistrationComponent implements OnInit {
   course!: Course;
 
   courseForm = new FormGroup ({
-      code: new FormControl(0, Validators.required),
-      description: new FormControl(),
-      duration: new FormControl('', Validators.required),
+      code: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]),
+      description: new FormControl(''),
+      duration: new FormControl(0.00, Validators.required),
       name: new FormControl('', Validators.required),
-      price: new FormControl(0, Validators.required),
-      rating: new FormControl(0, Validators.required),
+      price: new FormControl(0.00, Validators.required),
+      rating: new FormControl(0.00, Validators.required),
       releaseDate: new FormControl('', Validators.required)
   })
 
@@ -27,6 +27,13 @@ export class CourseRegistrationComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  saveNewCourse() {
+    const course = this.courseForm.value as Course;
+    this.CourseService.save(course).subscribe(() => {
+        this.router.navigate(['/courses']);
+    })
   }
 
   cancel(): void {

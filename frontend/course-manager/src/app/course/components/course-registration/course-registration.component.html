@@ -1,41 +1,41 @@
 <mat-card>
     <mat-card-title>New Register</mat-card-title>
-    <form class="form-registration">
+    <form [formGroup]="courseForm" (ngSubmit)="saveNewCourse()" class="form-registration">
         <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput type="text">
+            <mat-label for="name">Name</mat-label>
+            <input matInput type="text" id="name" formControlName="name">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Code</mat-label>
-            <input matInput type="text">
+            <mat-label for="code">Code</mat-label>
+            <input matInput type="text" id="code" formControlName="code">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Duration</mat-label>
-            <input matInput type="number">
+            <mat-label for="duration">Duration</mat-label>
+            <input matInput type="number" id="duration" formControlName="duration">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Rating</mat-label>
-            <input matInput type="outline">
+            <mat-label for="rating">Rating</mat-label>
+            <input matInput type="number" id="rating" formControlName="rating">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Price</mat-label>
-            <input matInput type="number">
+            <mat-label for="price">Price</mat-label>
+            <input matInput type="number" id="price" formControlName="price">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Description</mat-label>
-            <input matInput type="text">
+            <mat-label for="description">Description</mat-label>
+            <input matInput type="text" id="description" formControlName="description">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Release Date</mat-label>
-            <input matInput type="date">
+            <mat-label for="releaseDate">Release Date</mat-label>
+            <input matInput type="date" id="releaseDate" formControlName="releaseDate">
         </mat-form-field>
+        <div>
+            <button id="btn-save" mat-raised-button type="submit" [disabled]="!courseForm.valid">
+                Save
+            </button>
+            <button id="btn-cancel" mat-raised-button (click)="cancel()">
+                Cancel
+            </button>
+          </div>
     </form>
-    <div>
-        <button id="btn-save" mat-raised-button routerLink="/registration">
-            Save
-        </button>
-        <button id="btn-cancel" mat-raised-button (click)="cancel()">
-            Cancel
-        </button>
-      </div>
 </mat-card>
