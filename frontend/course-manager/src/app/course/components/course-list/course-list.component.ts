@@ -1,3 +1,4 @@
+import { AlertsService } from './../../alerts.service';
 import { CourseService } from './../../course.service';
 import { Course } from './../../course';
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +21,7 @@ export class CourseListComponent implements OnInit {
 
   displayedColumns = ['id', 'name', 'code', 'price', 'rating', 'duration', 'actions']
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, private alertsService: AlertsService) { }
 
   ngOnInit(): void {
     this.retrieveAll();
