@@ -10,7 +10,7 @@ export class AlertsService {
 
   alertSucess(mensagem: string) {
     Swal.fire({
-      title: 'SUCESS!',
+      title: 'Sucess!',
       text: mensagem,
       icon: 'success'
     });
@@ -18,7 +18,7 @@ export class AlertsService {
 
   alertError(mensagem: string) {
     Swal.fire({
-      title: 'ERRO!',
+      title: 'Erro!',
       text: mensagem,
       icon: 'error'
     });
@@ -26,7 +26,7 @@ export class AlertsService {
 
   alertWarm(mensagem: string) {
     Swal.fire({
-      title: 'OPS!',
+      title: 'Ops!',
       text: mensagem,
       icon: 'warning'
     });

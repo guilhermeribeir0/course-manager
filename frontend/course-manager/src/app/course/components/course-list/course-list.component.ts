@@ -15,7 +15,6 @@ export class CourseListComponent implements OnInit {
   courseSearch!: string;
   courses: Course[] = [];
   filteredCourses: Course[] = [];
-  filterBy!: string;
   labelPosition: 'name' | 'code' = 'code';
 
   imageteste: string = "/assets/"
@@ -40,35 +39,52 @@ export class CourseListComponent implements OnInit {
 
   retrieveCourseByChoice() {
     if (this.labelPosition === 'name') {
-        this.courseService.retrieveByName(this.courseSearch).subscribe({
-          next: courses => {
-            this.courses = courses;
-            console.log(courses)
-          },
-          error: erro => console.log('Error', erro)
-        });
+      this.courseService.retrieveByName(this.courseSearch).subscribe({
+        next: courses => {
+          this.courses = courses;
+          console.log(courses)
+        },
+        error: erro => console.log('Error', erro)
+      });
+
     } else if (this.labelPosition === 'code') {
-        this.courseService.retrieveByCode(this.courseSearch).subscribe({
-          next: courses => {
-            this.courses = courses;
-            console.log(courses)
-          },
-          error: erro => console.log('Error', erro)
-        });
+      this.courseService.retrieveByCode(this.courseSearch).subscribe({
+        next: courses => {
+          this.courses = courses;
+          console.log(courses)
+        },
+        error: erro => console.log('Error', erro)
+      });
     }
   }
 
   deleteById(courseId: number): void {
-    
 
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#004fe2',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
 
-    this.courseService.deleteById(courseId).subscribe({
-        next: () => {
-            console.log('Deletado com sucesso');
+      if (result.isConfirmed) {
+        this.courseService.deleteById(courseId).subscribe({
+          next: () => {
+            console.log('Course deleted successfully.');
             this.retrieveAll();
-        },
-        error: err => console.log('Error', err)
-    })
+          },
+          error: erro => console.log('Error', erro)
+        });
+        Swal.fire(
+          'Deleted!',
+          'Course deleted successfully.',
+          'success'
+        )
+      }
+    });
   }
 
 }
