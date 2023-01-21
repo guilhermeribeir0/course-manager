@@ -20,9 +20,9 @@ export class CourseService {
         return this.http.get<Course>(`${this.baseUrl}/${id}`);
     }
 
-    retrieveByCode(code: string): Observable<Course> {
+    retrieveByCode(code: string): Observable<Course[]> {
         code.toUpperCase();
-        return this.http.get<Course>(`${this.baseUrl}/{code}?code=${code}`);
+        return this.http.get<Course[]>(`${this.baseUrl}/{code}?code=${code}`);
     }
 
     retrieveByName(name: String): Observable<Course[]> {

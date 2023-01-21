@@ -2,6 +2,7 @@ import { AlertsService } from './../../alerts.service';
 import { CourseService } from './../../course.service';
 import { Course } from './../../course';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-course-list',
@@ -48,11 +49,9 @@ export class CourseListComponent implements OnInit {
         });
     } else if (this.labelPosition === 'code') {
         this.courseService.retrieveByCode(this.courseSearch).subscribe({
-          next: course => {
-            this.course = course;
-            this.courses = [];
-            this.courses.push(course)
-            console.log(course)
+          next: courses => {
+            this.courses = courses;
+            console.log(courses)
           },
           error: erro => console.log('Error', erro)
         });
@@ -60,6 +59,9 @@ export class CourseListComponent implements OnInit {
   }
 
   deleteById(courseId: number): void {
+    
+
+
     this.courseService.deleteById(courseId).subscribe({
         next: () => {
             console.log('Deletado com sucesso');
