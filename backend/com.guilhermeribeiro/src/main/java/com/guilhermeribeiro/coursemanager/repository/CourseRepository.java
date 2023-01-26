@@ -14,7 +14,7 @@ public interface CourseRepository  extends JpaRepository<Course, Long> {
     @Query(value = "SELECT * FROM course WHERE UPPER(course.code) LIKE UPPER(:code)", nativeQuery = true)
     public List<Course> findByCode(@Param("code") String code);
 
-    @Query(value = "SELECT * FROM course WHERE UPPER(course.name) LIKE UPPER(:name)", nativeQuery = true)
+    @Query(value = "SELECT * FROM course WHERE UPPER(course.name) LIKE CONCAT('%',UPPER(:name),'%')", nativeQuery = true)
     public List<Course> findByName(@Param("name") String name);
 
 }
