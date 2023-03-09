@@ -1,0 +1,9 @@
+.title {
+    margin-bottom: 20px;
+}
+
+#btn-cancel {
+    font-size: 16px;
+    background-color: #8b8b8b;
+    color: white;
+}
