@@ -30,6 +30,7 @@ import { HomeComponent } from './home/home.component';
 import { CourseListComponent } from './course/components/course-list/course-list.component';
 import { CourseInfoComponent } from './course/components/course-info/course-info.component';
 import { CourseRegistrationComponent } from './course/components/course-registration/course-registration.component';
+import { CourseUpdateComponent } from './course/components/course-update/course-update.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CourseRegistrationComponent } from './course/components/course-registra
     HeaderComponent,
     HomeComponent,
     CourseInfoComponent,
-    CourseRegistrationComponent
+    CourseRegistrationComponent,
+    CourseUpdateComponent
   ],
   imports: [
     BrowserModule,
