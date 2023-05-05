@@ -3,6 +3,7 @@ package com.guilhermeribeiro.coursemanager.controller;
 import com.guilhermeribeiro.coursemanager.model.Course;
 import com.guilhermeribeiro.coursemanager.repository.CourseRepository;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/courses")
 @AllArgsConstructor
+@NoArgsConstructor
 public class CourseController {
 
     @Autowired
@@ -43,6 +45,7 @@ public class CourseController {
 
     @GetMapping(value = "/{name}")
     public ResponseEntity<List<Course>> findCourseByName(@RequestParam(value = "name") String name) {
+
         List<Course> courses = courseRepository.findByName(name);
 
         if (courses == null) {
