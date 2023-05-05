@@ -14,7 +14,7 @@
 <h3>Technologies Used</h3>
 
 <ul>
-  <li>Java 19</li>
+  <li>Java 17</li>
   <li>Maven</li>
   <li><strong>Spring Web</strong></li>
   <li><strong>Spring Data JPA</strong></li>
