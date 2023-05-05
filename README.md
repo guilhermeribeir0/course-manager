@@ -1,4 +1,4 @@
-<h2>Course Manager</h2>
+<h1>Course Manager</h1>
 
 <p>Project created to manage registration of courses.</p>
 
